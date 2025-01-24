@@ -1,0 +1,29 @@
+package com.example.kotlinbasics
+
+// Data class to hold the details of the coffee order
+data class CoffeeDetails(
+    val sugarCount: Int,  // Number of spoons of sugar
+    val name: String,     // Name of the person ordering coffee
+    val size: String,     // Size of the coffee (e.g., small, medium, large)
+    val creamAmount: Int  // Amount of cream (not used in this example)
+)
+
+fun main() {
+    // Creating a CoffeeDetails object for a specific order
+    val coffeeForSid = CoffeeDetails(1, "Sid", "xxl", 0)
+
+    // Calling the makeCoffee function to process the order
+    makeCoffee(coffeeForSid)
+}
+
+// Function to prepare coffee based on the details provided
+fun makeCoffee(coffeeDetails: CoffeeDetails) {
+    // Check the sugar count and print the corresponding message
+    if (coffeeDetails.sugarCount == 1) {
+        println("Coffee with ${coffeeDetails.sugarCount} spoon of sugar for ${coffeeDetails.name}")
+    } else if (coffeeDetails.sugarCount == 0) {
+        println("Coffee with no sugar for ${coffeeDetails.name}")
+    } else {
+        println("Coffee with ${coffeeDetails.sugarCount} spoons of sugar for ${coffeeDetails.name}")
+    }
+}
