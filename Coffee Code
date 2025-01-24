@@ -1,0 +1,27 @@
+package com.example.kotlinbasics
+
+fun main(){
+    // Prompt the user for their name
+    println("Who is this coffee for?")
+    val name = readln()
+    // Prompt the user for the desired amount of sugar
+    println("How many pieces of sugar do you want?")
+    val sugarCount = readln().toInt()
+
+    // Call Function
+    makeCoffee(sugarCount, name)
+}
+
+fun makeCoffee(sugarCount: Int, name: String){
+    // Handle singular, plural, and invalid sugar count cases
+    if(sugarCount == 1){
+        println("Coffee with $sugarCount spoon of sugar for $name")
+    }
+    else if(sugarCount == 0 || sugarCount > 1){
+        println("Coffee with $sugarCount spoons of sugar for $name")
+    }
+    // Handle negative sugar count as an invalid input
+    else{
+        println("Sugar count can't be negative")
+    }
+}
