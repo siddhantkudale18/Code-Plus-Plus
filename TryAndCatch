@@ -1,0 +1,19 @@
+package com.example.kotlinbasics
+
+fun main(){
+    var number: Int
+    println("Enter a Number")
+    try{
+        // error prone code
+        number = readln().toInt()
+        println("User entered: $number")
+    }
+    catch(e : Exception){
+        // waht shoul happen when error ouucures
+        println("Error: " + e.message)
+    }
+    finally {
+        println("This will be execute")
+        number = 0
+    }
+}
